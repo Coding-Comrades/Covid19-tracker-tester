@@ -28,14 +28,17 @@
 
 /* Covid Cases Display */
 
-.row{
-    margin: 20px;
-    
-}
 .casesinfo{
     text-align: center;
+    margin: 15px;  
+    border-radius: 1rem;  
 }
-
+.caseheading{
+    padding: 1rem;
+}
+.count{
+    padding: 2rem;
+}
 #totalcases{
     background-color: blue;
 }
