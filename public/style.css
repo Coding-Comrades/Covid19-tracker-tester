@@ -39,6 +39,20 @@
 .count{
     padding: 2rem;
 }
+
+
+
+.about{
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+}
+  
+
+
+
+
 #totalcases{
     background-color: blue;
 }
