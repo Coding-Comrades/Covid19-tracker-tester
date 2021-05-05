@@ -28,6 +28,9 @@
 
 /* Covid Cases Display */
 
+.container-fluid{
+    margin-top: 90px;
+}
 .casesinfo{
     text-align: center;
     margin: 15px;  
@@ -65,3 +68,5 @@
 #vaccinated{
     background-color: yellow;
 }
+
+/* table styling */

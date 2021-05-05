@@ -13,11 +13,18 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
-app.get("/", function(req, res){
-    res.sendFile(__dirname+"/index.html");
-})
+
+app.get("/", function(req,res){
+    res.render("home");
+    
+});
 
 
+
+app.get("/about", function(req,res){
+  res.render("about");
+  
+});
 
 
 
