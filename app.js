@@ -18,15 +18,15 @@ app.use(express.static("public"));
 mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true, useUnifiedTopology: true});
 
 
-const storeSchema = {
+const storeSchema = mongoose.Schema({
   name : String,
   address : String,
   contact : Number,
   medicine : String,
   district : String
-};
+});
 
-const Store = new mongoose.model("Store",storeSchema);
+const Store = mongoose.model("Store",storeSchema);
 
 
 app.get("/", function(req,res){
@@ -83,12 +83,20 @@ app.post("/addlead",function(req,res){
   const storeAddress = req.body.contact;
   const storeMedicine = req.body.medicine;
 
-  console.log(storeName);
-  console.log(storeDistrict);
-  console.log(storeContact);
-  console.log(storeAddress);
-  console.log(storeMedicine);
+  // console.log(storeName);
+  // console.log(storeDistrict);
+  // console.log(storeContact);
+  // console.log(storeAddress);
+  // console.log(storeMedicine);
 
+  const store = new Store({
+    name : storeName,
+    address : storeDistrict,
+    contact : storeContact,
+    medicine : storeMedicine,
+    district : storeAddress
+  })
+  store.save();
   res.redirect("/medicines");
 
 })
