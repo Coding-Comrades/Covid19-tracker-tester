@@ -8,21 +8,29 @@
     
             <div class="casesinfo" id="totalcases">
                 <h1 class="caseheading">Infected</h1>
-                <h3 class="count" id="totalcasescount">wait...</h3>
+                <h3 class="count" id="totalcasescount">
+                    <%= statewiseData[0].confirmed %>
+                </h3>
             </div>
     
             <div class="casesinfo" id="recovered">
                 <h1 class="caseheading">Recovered</h1>
-                <h3 class="count" id="recoveredcount">wait....</h3>
+                <h3 class="count" id="recoveredcount">
+                    <%= statewiseData[0].recovered %>
+                </h3>
             </div>
         
             <div class="casesinfo" id="deaths">
                 <h1 class="caseheading">Deaths</h1>
-                <h3 class="count" id="deathscount">wait...</h3>
+                <h3 class="count" id="deathscount">
+                    <%= statewiseData[0].deaths %>
+                </h3>
             </div>  
             <div class="casesinfo" id="vaccinated">
                 <h1 class="caseheading">Vaccinated</h1>
-                <h3 class="count" id="vaccinatedcount">wait....</h3>
+                <h3 class="count" id="vaccinatedcount">
+                    <%= testData.totalindividualsvaccinated %>
+                </h3>
             </div>
             
           </div>
@@ -46,49 +54,19 @@
                   </tr>
               </thead>
               <tbody>
+                    <%  for(var i = 1; i < statewiseData.length; i++) { %>
+                        <tr>
+                            <td><%= i %></td>
+                            <td><%= statewiseData[i].state %></td>
+                            <td><%= statewiseData[i].confirmed %></td>
+                            <td><%= statewiseData[i].active %></td>
+                            <td><%= statewiseData[i].deaths %></td>
+                            <td><%= statewiseData[i].recovered %></td>
+                        </tr>
+                    <%  } %>
                   
-                  <tr>
-                      <td>Prescott Bartlett</td>
-                      <td>Technical Author</td>
-                      <td>London</td>
-                      <td>27</td>
-                      <td>2011/05/07</td>
-                      <td>$145,000</td>
-                  </tr>
-                  <tr>
-                      <td>Gavin Cortez</td>
-                      <td>Team Leader</td>
-                      <td>San Francisco</td>
-                      <td>22</td>
-                      <td>2008/10/26</td>
-                      <td>$235,500</td>
-                  </tr>
-                  <tr>
-                      <td>Martena Mccray</td>
-                      <td>Post-Sales support</td>
-                      <td>Edinburgh</td>
-                      <td>46</td>
-                      <td>2011/03/09</td>
-                      <td>$324,050</td>
-                  </tr>
-                  <tr>
-                      <td>Unity Butler</td>
-                      <td>Marketing Designer</td>
-                      <td>San Francisco</td>
-                      <td>47</td>
-                      <td>2009/12/09</td>
-                      <td>$85,675</td>
-                  </tr>
-                  <tr>
-                      <td>Howard Hatfield</td>
-                      <td>Office Manager</td>
-                      <td>San Francisco</td>
-                      <td>51</td>
-                      <td>2008/12/16</td>
-                      <td>$164,500</td>
-                  </tr>
                   
-              </tfoot>
+              </tbody>
           </table>
           </div>   
           
@@ -120,6 +98,25 @@
                 }
             }
         }
+
+        /*  The below Function is created to give comas(,) and format numeric values.
+            This is currently not being implemented anywhere.
+            Don't make any changes in this.
+        */
+
+        function formatnos(x)   
+        {
+            var lastThree = x.substring(x.length-3);
+            var otherNumbers = x.substring(0,x.length-3);
+            if(otherNumbers != '')
+            {
+                lastThree = ',' + lastThree;
+            }
+            var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+            return res;
+        }
+
+        
     </script>
 
 <%- include("partials/footer"); -%>
