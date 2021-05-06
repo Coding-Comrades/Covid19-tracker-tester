@@ -70,3 +70,19 @@
 }
 
 /* table styling */
+
+
+
+
+/* Vaccnation Page Styling */
+
+.pinButton {
+    
+  border: 30px solid green;
+  
+}
+
+.pinButton {
+    border: none;
+    background-color: transparent;
+}

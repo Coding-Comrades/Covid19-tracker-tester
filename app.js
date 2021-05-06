@@ -49,6 +49,11 @@ app.get("/about", function(req,res){
   
 });
 
+app.get("/vaccination", function(req,res){
+  res.render("vaccination");
+  
+});
+
 
 
 
