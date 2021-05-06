@@ -57,21 +57,26 @@
 
 
 #totalcases{
-    background-color: blue;
+    background-color: #C2CAD0;
 }
 #recovered{
-    background-color: greenyellow;
+    background-color: #AFD275;
 }
 #deaths{
-    background-color: red;
+    background-color:#E7717D;
 }
 #vaccinated{
-    background-color: yellow;
+    background-color: #C2B9B0;
 }
 
 /* table styling */
 
+/* Medicine Page */
 
+.addLead{
+    margin-left: 20%;
+    margin-bottom: 10px;
+}
 
 
 /* Vaccnation Page Styling */
