@@ -1,5 +1,3 @@
-/* Styling for whole body */
-
 *{
     margin: 0;
 }
@@ -81,13 +79,45 @@
 
 /* Vaccnation Page Styling */
 
-.pinButton {
-    
-  border: 30px solid green;
-  
-}
 
-.pinButton {
+.buttonContainer {
+    background-color: yellow;
+    border-radius: 25px;
+    width: 25rem;
+    height: 3rem;
+    
+    
+}
+.pinButtoncss {
     border: none;
     background-color: transparent;
+    float: left;
+    height: 100%;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 31px;
+    border-radius: 25px;
+}
+
+.districtButtoncss {
+    border: none;
+    background-color: transparent;
+    float: right;
+    height: 100%;
+    padding: 10px;
+    padding-left: 41px;
+    padding-right: 37px;
+    border-radius: 25px;
+}
+.toggleButton {
+    background-color: blueviolet;
+}
+button:focus {outline:0;}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
 }

@@ -15,9 +15,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
-mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true, useUnifiedTopology: true});
-
-
 const storeSchema = mongoose.Schema({
   name : String,
   address : String,
@@ -64,9 +61,12 @@ app.get("/about", function(req,res){
 });
 
 app.get("/vaccination", function(req,res){
+
   res.render("vaccination");
   
 });
+
+/*
 app.get("/medicines",function(req,res){
 
   Store.find({},function(err,foundItems){
@@ -101,7 +101,9 @@ app.post("/addlead",function(req,res){
 
 })
 
-  
+  */
+
+
 
 app.listen(3000, function() {
     console.log("Server is running on port 3000.");

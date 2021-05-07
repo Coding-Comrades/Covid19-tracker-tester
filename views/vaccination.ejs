@@ -6,14 +6,18 @@
 
     <div class="container-fluid">
         <div class="buttonContainer">
-            <a href="#" class="pinButton">Search By Pin code</a>
-            <a href="#" class="districtButton">Search By District</a>
+            <div type="button" onclick="pinclick()" class="pinButtoncss toggleButton" id="pinButton">
+                Search By Pin code
+            </div>
+            <div type="button" onclick="distclick()" class="districtButtoncss" id="districtButton">
+                Search By District
+            </div>
         </div>
 
-        <div class="pinCode">
-            <h1>Pin Code</h1>
+        <div id="pincode" >
+            <h1 >Pin Code</h1>
         </div>
-        <div class="district">
+        <div id="district" style="display: none">
             <h1>District</h1>
         </div>
         
@@ -22,11 +26,20 @@
 </form>
 
 
+<script>
+    function pinclick(){
+  document.getElementById("pincode").style.display = "";
+  document.getElementById("district").style.display = "none";
+  document.getElementById("pinButton").classList.add("toggleButton");
+  document.getElementById("districtButton").classList.remove("toggleButton");
+  console.log("clicked");
+}
+function distclick(){
+  document.getElementById("pincode").style.display = "none";
+  document.getElementById("district").style.display = "";
+  document.getElementById("pinButton").classList.remove("toggleButton");
+  document.getElementById("districtButton").classList.add("toggleButton");
+}
 
-
-
-
-
-
-
+</script>
 <%- include("partials/footer"); -%>
