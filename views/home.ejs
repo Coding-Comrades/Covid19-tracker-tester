@@ -6,30 +6,42 @@
     <div class="container-fluid">
         <div class="row row-cols-1 row-cols-md-4 justify-content-center">
     
+            <% function formatnos(x)   
+                {
+                    var lastThree = x.substring(x.length-3);
+                    var otherNumbers = x.substring(0,x.length-3);
+                    if(otherNumbers != '')
+                    {
+                        lastThree = ',' + lastThree;
+                    }
+                    var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+                    return res;
+                }
+            %> 
             <div class="casesinfo" id="totalcases">
                 <h1 class="caseheading">Infected</h1>
                 <h3 class="count" id="totalcasescount">
-                    <%= statewiseData[0].confirmed %>
+                    <%= formatnos(statewiseData[0].confirmed) %>
                 </h3>
             </div>
     
             <div class="casesinfo" id="recovered">
                 <h1 class="caseheading">Recovered</h1>
                 <h3 class="count" id="recoveredcount">
-                    <%= statewiseData[0].recovered %>
+                    <%= formatnos(statewiseData[0].recovered) %>
                 </h3>
             </div>
         
             <div class="casesinfo" id="deaths">
                 <h1 class="caseheading">Deaths</h1>
                 <h3 class="count" id="deathscount">
-                    <%= statewiseData[0].deaths %>
+                    <%= formatnos(statewiseData[0].deaths) %>
                 </h3>
             </div>  
             <div class="casesinfo" id="vaccinated">
                 <h1 class="caseheading">Vaccinated</h1>
                 <h3 class="count" id="vaccinatedcount">
-                    <%= testData.totalindividualsvaccinated %>
+                    <%= formatnos(testData.totalindividualsvaccinated) %>
                 </h3>
             </div>
             
@@ -38,8 +50,14 @@
 
         <!-- State Wise table  -->
 
-        <div class="container mb-3 mt-3">
-            <input type="text" name="" id="myInput" placeholder="Search Your State" onkeyup="search()">
+        <div class="container stateshow mb-3 mt-3 ">
+
+            <h2 class="stateheading">Statewise Corona Updates</h2>
+
+            <div class="d-flex justify-content-center inputdiv">
+                <input type="text" name="" id="myInput" placeholder="Search Your State" onkeyup="search()">
+            </div>
+            <div class="panel panel-default">
             <table id="mydatatable" class="table table-striped table-bordered" style="width: 100%">
               <thead>
                   <tr>
@@ -56,16 +74,17 @@
                         <tr>
                             <td><%= i %></td>
                             <td><%= statewiseData[i].state %></td>
-                            <td><%= statewiseData[i].confirmed %></td>
-                            <td><%= statewiseData[i].active %></td>
-                            <td><%= statewiseData[i].deaths %></td>
-                            <td><%= statewiseData[i].recovered %></td>
+                            <td><%= formatnos(statewiseData[i].confirmed) %></td>
+                            <td><%= formatnos(statewiseData[i].active) %></td>
+                            <td><%= formatnos(statewiseData[i].deaths) %></td>
+                            <td><%= formatnos(statewiseData[i].recovered) %></td>
                         </tr>
                     <%  } %>
                   
                   
               </tbody>
           </table>
+        </div>
           </div>   
           
     </form>
@@ -102,18 +121,7 @@
             Don't make any changes in this.
         */
 
-        function formatnos(x)   
-        {
-            var lastThree = x.substring(x.length-3);
-            var otherNumbers = x.substring(0,x.length-3);
-            if(otherNumbers != '')
-            {
-                lastThree = ',' + lastThree;
-            }
-            var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
-            return res;
-        }
-
+        
         
     </script>
 
