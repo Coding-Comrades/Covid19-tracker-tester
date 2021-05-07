@@ -26,7 +26,7 @@
 
 /* Covid Cases Display */
 
-.container-fluid{
+.caseinfocontainer{
     padding-top: 130px;
     padding-bottom: 140px;
     background-image: url('/images/covid1.jpg');
