@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const axios = require('axios');
 const { inflateRawSync } = require('zlib');
+const _ = require("lodash");
 
 const app = express();
 
@@ -13,6 +14,9 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static("public"));
+
+const dbUrl = 'mongodb+srv://covid19tracker:xd5duo5vZHG9BpnX@cluster0.bt3xj.mongodb.net/covid19trackerdb?retryWrites=true&w=majority';
+mongoose.connect(dbUrl,  { useNewUrlParser: true, useUnifiedTopology: true, 'useFindAndModify': false});
 
 
 const storeSchema = mongoose.Schema({
@@ -61,12 +65,9 @@ app.get("/about", function(req,res){
 });
 
 app.get("/vaccination", function(req,res){
-
   res.render("vaccination");
   
 });
-
-/*
 app.get("/medicines",function(req,res){
 
   Store.find({},function(err,foundItems){
@@ -78,10 +79,10 @@ app.get("/medicines",function(req,res){
 
 app.post("/addlead",function(req,res){
   const storeName = req.body.storeName;
-  const storeDistrict = req.body.district;
-  const storeContact = req.body.contact;
-  const storeAddress = req.body.contact;
-  const storeMedicine = req.body.medicine;
+  const storeDistrict = _.capitalize(req.body.district);
+  const storeContact = _.capitalize(req.body.contact);
+  const storeAddress = _.capitalize(req.body.contact);
+  const storeMedicine = _.capitalize(req.body.medicine);
 
   // console.log(storeName);
   // console.log(storeDistrict);
@@ -101,9 +102,7 @@ app.post("/addlead",function(req,res){
 
 })
 
-  */
-
-
+  
 
 app.listen(3000, function() {
     console.log("Server is running on port 3000.");

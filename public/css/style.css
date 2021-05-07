@@ -27,9 +27,9 @@
 /* Covid Cases Display */
 
 .caseinfocontainer{
-    padding-top: 130px;
+    padding-top: 80px;
     padding-bottom: 140px;
-    background-image: url('/images/covid1.jpg');
+    background-image: url("images");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -79,15 +79,27 @@ input:focus {outline:0;}
 
 #totalcases{
     background-color: #C2CAD0;
+    box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
 }
 #recovered{
     background-color: #AFD275;
+    box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
 }
 #deaths{
     background-color:#E7717D;
+    box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
 }
 #vaccinated{
     background-color: #C2B9B0;
+    box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
 }
 
 /* table styling */
@@ -115,10 +127,13 @@ input:focus {outline:0;}
 
 
 .buttonContainer {
-    background-color: yellow;
+    background-color: #474e5d;
     border-radius: 25px;
+    
+    
     width: 25rem;
     height: 3rem;
+   
     
     
 }
@@ -144,7 +159,11 @@ input:focus {outline:0;}
     border-radius: 25px;
 }
 .toggleButton {
-    background-color: blueviolet;
+    background-color:	#696969;
+    box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -4px 6px 12px 0px rgba(0,0,0,0.75);
+  
 }
 button:focus {outline:0;}
 
@@ -164,7 +183,7 @@ button:focus {outline:0;}
     padding: 50px;
     margin-top: 150px;
     text-align: center;
-    background-color: #474e5d;
+    background-color: #343A40;
     color: white;
     bottom: 0;
     width: 100%;
