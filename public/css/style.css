@@ -196,3 +196,62 @@ button:focus {outline:0;}
     width: 100%;
     
 }
+
+
+
+
+
+.se
+{
+    border-radius: 25px;
+    border: 2px solid;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    font-size:20px;
+    width: 40rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pin-btn
+{
+    border-radius: 15px;
+    color: black;
+    margin-left: 10px;
+    margin-top: 20px;
+    height: 50px;
+}
+
+.dist-btn
+{
+    border-radius: 15px;
+    color: black;
+    margin-left: 1080px;
+    height: 50px;
+    position: relative;
+    top:-33px;
+}
+
+.drop-down1
+{
+    margin-top: 40px;
+    margin-left: 250px;
+    width: 400px;
+    outline: 0px solid transparent;
+}
+
+.drop-down2
+{
+    margin-left:650px;
+    width:400px;
+    margin-top: -38px;
+}
+
+.toggle
+{
+    margin-top: 20px;
+    margin-left: 400px;
+    margin-bottom: 20px;
+    top:30px;
+}
